@@ -3,6 +3,12 @@ from django.db import models
 
 # Create your models here.
 
+class userQuiz(models.Model):
+    nome = models.CharField(max_length=64)
+    email = models.EmailField(unique=True)
+    inscription = models.DateTimeField(auto_now_add=True)
+
+
 class Question(models.Model):
     enunciatedQuestion = models.TextField()
     alternatives = models.JSONField()
